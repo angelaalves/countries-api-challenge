@@ -1,14 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import { uriGetAllCountries } from "../../api/endpoints";
 import { CountryCard } from "../../components/CountryCard";
 import { ThemeSwitch } from "../../components/ThemeSwitch";
+import useLocalStorage from "use-local-storage";
 import "./styles.css";
+export const themes = {
+  light: "light",
+  dark: "dark",
+};
 
-export function Dashboard(prop) {
+//I choose to use Context because I think Redux is a bit overkill for what was needed, this was my first time using context, I usualy work with redux.
+export const Context = createContext({
+  theme: themes.dark,
+  setTheme: () => {},
+});
+
+export function Dashboard() {
   const [countriesList, setCountriesList] = useState([]);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [themeState, setThemeState] = useState("light");
+  const [themeState, setThemeState] = useLocalStorage(
+    "theme",
+    defaultDark ? themes.dark : themes.light
+  );
+
+  const setTheme = () => {
+    setThemeState(themeState === themes.dark ? themes.light : themes.dark);
+  };
+
   useEffect(() => {
     getAllCountries();
   }, []);
@@ -19,6 +38,7 @@ export function Dashboard(prop) {
     });
   };
 
+  //I choose to deconstruct the array elements because we don't need all the information. And this way is more efficient
   const handleCountries = (countries) => {
     let newCountriesArray = [];
     countries.map((country) =>
@@ -44,10 +64,12 @@ export function Dashboard(prop) {
   };
 
   return (
-    <div className="app" data-theme={themeState}>
-      <h1>Dashboard</h1>
-      <ThemeSwitch />
-      {renderList()}
-    </div>
+    <Context.Provider value={{ themeState, setTheme }}>
+      <div className="app" data-theme={themeState}>
+        <h1>Dashboard</h1>
+        <ThemeSwitch />
+        {renderList()}
+      </div>
+    </Context.Provider>
   );
 }
