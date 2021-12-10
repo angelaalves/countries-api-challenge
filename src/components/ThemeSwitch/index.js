@@ -1,10 +1,19 @@
-import React from "react";
-import useLocalStorage from "use-local-storage";
-export function SwitchTheme() {
-  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [theme, setTheme] = useLocalStorage(
-    "theme",
-    defaultDark ? "dark" : "light"
+import React, { useEffect, useState } from "react";
+
+import "./styles.css";
+export function ThemeSwitch() {
+  const [theme, setTheme] = useState("light");
+ 
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    console.log("hey", newTheme);
+    setTheme(newTheme);
+  };
+  return (
+    <div>
+      <button onClick={switchTheme}>
+        <text>Dark Mode</text>
+      </button>
+    </div>
   );
-  return <div></div>;
 }
