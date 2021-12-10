@@ -1,0 +1,48 @@
+.card {
+  background-color: var(--elements);
+  transition: all 0.5s;
+  width: 300px;
+  height: 400px;
+  text-align: flex-start;
+  justify-content: center;
+  align-self: center;
+  margin: 25px;
+  border-radius: 5px;
+}
+.card:hover{
+  box-shadow: 0 0 20px #c54f4f;
+}
+.card-info {
+  padding-top: 15px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+}
+.flag-container {
+}
+.flag {
+  width: 300px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.card-details {
+  width: 300px;
+  height: 500px;
+  flex-direction: column;
+  display: flex;
+  margin-top: 14px;
+}
+.country-name {
+  font-size: 18px;
+  font-family: "Nunito Sans";
+  font-weight: 800;
+}
+.label {
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-weight: 600;
+}
+.detail {
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-weight: 300;
+}

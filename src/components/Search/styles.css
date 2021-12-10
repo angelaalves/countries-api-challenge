@@ -1,0 +1,23 @@
+.input {
+  background-color: var(--elements);
+  border-width: 0px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: "Nunito Sans";
+  font-weight: 300;
+  padding: 10px;
+  padding-left: 70px;
+  width: 400px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.input:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px #c54f4f;
+  }
+.icon-search {
+  position: absolute;
+  top: 112px;
+  left: 80px;
+  color: var(--text);
+}
