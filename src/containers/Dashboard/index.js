@@ -2,16 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { uriGetAllCountries } from "../../api/endpoints";
 import { CountryCard } from "../../components/CountryCard";
-import useLocalStorage from "use-local-storage";
 import { ThemeSwitch } from "../../components/ThemeSwitch";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import { setTheme } from "../../store/actions";
 import "./styles.css";
-function Dashboard(prop) {
+
+export function Dashboard(prop) {
   const [countriesList, setCountriesList] = useState([]);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [themeState, setThemeState] = useState(prop.store.theme);
+  const [themeState, setThemeState] = useState("light");
   useEffect(() => {
     getAllCountries();
   }, []);
@@ -47,20 +44,10 @@ function Dashboard(prop) {
   };
 
   return (
-    <div className="app" data-theme={theme}>
+    <div className="app" data-theme={themeState}>
       <h1>Dashboard</h1>
       <ThemeSwitch />
       {renderList()}
     </div>
   );
 }
-
-const mapStateToProps = ({ theme }) => ({
-  theme: theme.value,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setTheme: (value) => dispatch(setTheme(value)),
-});
-
-export default compose(connect(mapStateToProps, mapDispatchToProps)(Dashboard));
