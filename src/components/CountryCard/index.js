@@ -1,9 +1,14 @@
 import React from "react";
 import "./styles.css";
 import { Context } from "../../containers/Dashboard";
+import { useNavigate } from "react-router-dom";
 export function CountryCard({ country }) {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/detail");
+  };
   return (
-    <div className="card">
+    <div className="card" onClick={handleClick}>
       <div className="flag-container">
         <img className="flag" src={country.flags.png} alt="Flag" />
       </div>
