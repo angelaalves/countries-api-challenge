@@ -6,12 +6,10 @@ import { CountryDetail } from "./containers/CountryDetail";
 export default function App() {
   return (
     <Router>
-      <div>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/detail" element={<CountryDetail />} />
         </Routes>
-      </div>
     </Router>
   );
 }

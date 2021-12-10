@@ -2,7 +2,8 @@ import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import { uriGetAllCountries } from "../../api/endpoints";
 import { CountryCard } from "../../components/CountryCard";
-import { ThemeSwitch } from "../../components/ThemeSwitch";
+import { Header } from "../../components/Header";
+
 import useLocalStorage from "use-local-storage";
 import "./styles.css";
 export const themes = {
@@ -64,10 +65,9 @@ export function Dashboard() {
   };
 
   return (
-    <Context.Provider value={{ themeState, setTheme }}>
-      <div className="app" data-theme={themeState}>
-        <h1>Dashboard</h1>
-        <ThemeSwitch />
+    <Context.Provider className="wrapper" value={{ themeState, setTheme }}>
+      <div className="App" data-theme={themeState}>
+        <Header />
         {renderList()}
       </div>
     </Context.Provider>
