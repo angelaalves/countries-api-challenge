@@ -70,7 +70,7 @@ export function Dashboard() {
   };
   const renderList = () =>
     countriesList?.map((country, index) => (
-      <CountryCard key={index} country={country} />
+      <CountryCard key={index} country={country} theme={themeState} />
     ));
 
   return (

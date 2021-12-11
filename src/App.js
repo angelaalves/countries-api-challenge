@@ -5,11 +5,9 @@ import { CountryDetail } from "./containers/CountryDetail";
 
 export default function App() {
   return (
-    <Router>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/detail" element={<CountryDetail />} />
-        </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/detail" element={<CountryDetail />} />
+    </Routes>
   );
 }
