@@ -2,18 +2,32 @@
   background-color: var(--elements);
   flex-direction: row;
   justify-content: space-between;
-  height:60px;
+  height: 60px;
   display: flex;
   transition: all 0.5s;
 }
 
 .title {
-  font-size: 20px;
+  font-size: 14px;
   font-family: "Nunito Sans";
   font-weight: 800;
-  margin-top: 10px;
-  margin-left: 50px;
+  margin-top: 20px;
+  margin-left: 10px;
   color: var(--text);
   background-color: var(--elements);
   transition: all 0.5s;
+}
+
+@media only screen and (min-width: 750px) {
+
+  .title {
+    font-size: 20px;
+    font-family: "Nunito Sans";
+    font-weight: 800;
+    margin-top: 10px;
+    margin-left: 50px;
+    color: var(--text);
+    background-color: var(--elements);
+    transition: all 0.5s;
+  }
 }

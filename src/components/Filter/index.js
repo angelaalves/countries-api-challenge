@@ -9,7 +9,7 @@ export function Filter({ handleFilter }) {
   const renderRegions = () => {
     return regions.map((region) => (
       <div
-        className="filter-text"
+        className="filter-text select"
         onClick={() => {
           setRegion(region);
           setOpen(false);

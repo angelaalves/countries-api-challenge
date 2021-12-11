@@ -6,7 +6,7 @@ export function ThemeSwitch() {
   return (
     <Context.Consumer className="wrapper">
       {({ theme, setTheme }) => (
-        <text className="button" onClick={setTheme} data-theme={theme}>
+        <text className="switch" onClick={setTheme} data-theme={theme}>
           <FaRegMoon className="icon" />
           <text>Dark Mode</text>
         </text>

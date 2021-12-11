@@ -1,5 +1,5 @@
-.button {
-  font-size: 14px;
+.switch {
+  font-size: 12px;
   font-family: "Nunito Sans";
   font-weight: 600;
   color: var(--text);
@@ -7,7 +7,6 @@
   transition: all 0.5s;
   margin-right: 50px;
   margin-top: 20px;
-  
 }
 .icon {
   margin-right: 10px;
@@ -15,4 +14,9 @@
 .wrapper {
   background-color: var(--background);
   transition: all 0.5s;
+}
+@media only screen and (min-width: 750px) {
+  .switch {
+    font-size: 14px;
+  }
 }
