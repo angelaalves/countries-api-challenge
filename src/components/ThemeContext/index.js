@@ -15,7 +15,6 @@ export const Context = createContext({
 
 //Created this Wrapper To pass Context to All app and to prevent repeating the Header code
 export function ThemeContext({ child }) {
-  const [countriesList, setCountriesList] = useState([]);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [themeState, setThemeState] = useLocalStorage(
     "theme",
