@@ -2,32 +2,12 @@ import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import { uriGetAllCountries, uriGetCountryByName } from "../../api/endpoints";
 import { CountryCard } from "../../components/CountryCard";
-import { Header } from "../../components/Header";
 import { Search } from "../../components/Search";
-import useLocalStorage from "use-local-storage";
 import "./styles.css";
-export const themes = {
-  light: "light",
-  dark: "dark",
-};
-
-//I choose to use Context because I think Redux is a bit overkill for what was needed, this was my first time using context, I usualy work with redux.
-export const Context = createContext({
-  theme: themes.dark,
-  setTheme: () => {},
-});
+import { ThemeContext } from "../../components/ThemeContext";
 
 export function Dashboard() {
   const [countriesList, setCountriesList] = useState([]);
-  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [themeState, setThemeState] = useLocalStorage(
-    "theme",
-    defaultDark ? themes.dark : themes.light
-  );
-
-  const setTheme = () => {
-    setThemeState(themeState === themes.dark ? themes.light : themes.dark);
-  };
 
   useEffect(() => {
     getAllCountries();
@@ -70,16 +50,17 @@ export function Dashboard() {
   };
   const renderList = () =>
     countriesList?.map((country, index) => (
-      <CountryCard key={index} country={country} theme={themeState} />
+      <CountryCard key={index} country={country} />
     ));
 
   return (
-    <Context.Provider className="wrapper" value={{ themeState, setTheme }}>
-      <div className="App" data-theme={themeState}>
-        <Header />
-        <Search handleSearch={handleSearch} />
-        <div className="cards-container">{renderList()}</div>
-      </div>
-    </Context.Provider>
+    <ThemeContext
+      child={
+        <>
+          <Search handleSearch={handleSearch} />
+          <div className="cards-container">{renderList()}</div>
+        </>
+      }
+    />
   );
 }

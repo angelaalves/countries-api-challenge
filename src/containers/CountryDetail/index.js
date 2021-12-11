@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Header } from "../../components/Header";
+import { ThemeContext } from "../../components/ThemeContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./styles.css";
 
 export function CountryDetail() {
   const { state } = useLocation();
-  const { country, theme } = state;
+  const { country } = state;
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/");
@@ -18,10 +18,13 @@ export function CountryDetail() {
     // return <img className="flag" src={country.flags.png} alt="Flag" />;
   };
   return (
-    <div className="App" data-theme={theme}>
-      <Header />
-      {renderBackButton()}
-      {renderFlag()}
-    </div>
+    <ThemeContext
+      child={
+        <>
+          {renderBackButton()}
+          {renderFlag()}
+        </>
+      }
+    />
   );
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
-export function CountryCard({ country, theme }) {
+export function CountryCard({ country }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    console.log("country", country, "theme", theme);
-    navigate("/detail", { state: { country: country, theme: theme } });
+    navigate("/detail", {
+      state: { country: country },
+    });
   };
   return (
     <div className="card" onClick={handleClick}>

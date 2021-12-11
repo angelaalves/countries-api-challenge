@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import styles from "./styles.css";
 import { FaRegMoon } from "react-icons/fa";
-import { Context } from "../../containers/Dashboard";
+import { Context } from "../ThemeContext";
 export function ThemeSwitch() {
   return (
     <Context.Consumer className="wrapper">
