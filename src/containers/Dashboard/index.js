@@ -1,8 +1,13 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
-import { uriGetAllCountries, uriGetCountryByName } from "../../api/endpoints";
+import {
+  uriGetAllCountries,
+  uriGetCountryByName,
+  uriGetCountriesByRegion,
+} from "../../api/endpoints";
 import { CountryCard } from "../../components/CountryCard";
 import { Search } from "../../components/Search";
+import { Filter } from "../../components/Filter";
 import "./styles.css";
 import { ThemeContext } from "../../components/ThemeContext";
 
@@ -29,6 +34,13 @@ export function Dashboard() {
       });
     }
   };
+  const handleFilter = (region) => {
+    //Does this verification so you can get all the results again
+    axios.get(uriGetCountriesByRegion(region)).then((res) => {
+      handleCountries(res.data);
+    });
+  };
+
   //I choose to deconstruct the array elements because we don't need all the information. And this way is more efficient
   const handleCountries = (countries) => {
     let newCountriesArray = [];
@@ -48,6 +60,7 @@ export function Dashboard() {
     );
     setCountriesList(newCountriesArray);
   };
+
   const renderList = () =>
     countriesList?.map((country, index) => (
       <CountryCard key={index} country={country} />
@@ -57,7 +70,10 @@ export function Dashboard() {
     <ThemeContext
       child={
         <>
-          <Search handleSearch={handleSearch} />
+          <div className="search-filter">
+            <Search handleSearch={handleSearch} />
+            <Filter handleFilter={handleFilter} />
+          </div>
           <div className="cards-container">{renderList()}</div>
         </>
       }

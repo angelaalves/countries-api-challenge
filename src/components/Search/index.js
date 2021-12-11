@@ -30,7 +30,7 @@ export function Search({ handleSearch }) {
         }}
         type="text"
         name="country"
-      ></input>
+      />
     </div>
   );
 }

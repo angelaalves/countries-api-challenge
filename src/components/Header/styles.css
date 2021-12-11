@@ -2,13 +2,13 @@
   background-color: var(--elements);
   flex-direction: row;
   justify-content: space-between;
-  height: 50px;
+  height:60px;
   display: flex;
   transition: all 0.5s;
 }
 
 .title {
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Nunito Sans";
   font-weight: 800;
   margin-top: 10px;

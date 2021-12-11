@@ -27,9 +27,9 @@ export function ThemeContext({ child }) {
 
   return (
     <Context.Provider className="wrapper" value={{ themeState, setTheme }}>
-      <div className="App" data-theme={themeState}>
+      <div className="app" data-theme={themeState}>
         <Header />
-        {child}
+        <div className="content">{child}</div>
       </div>
     </Context.Provider>
   );

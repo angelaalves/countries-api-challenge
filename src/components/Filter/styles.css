@@ -1,0 +1,31 @@
+.filter-container {
+}
+.filter-button {
+  background-color: var(--elements);
+  border-radius: 5px;
+  color: var(--text);
+  padding: 10px;
+  padding-left: 20px;
+  width: 150px;
+  margin-top: 50px;
+}
+.filter-dropdown {
+  background-color: var(--elements);
+  border-radius: 5px;
+  color: var(--text);
+  padding: 10px;
+  padding-left: 20px;
+  width: 150px;
+  margin-top: 5px;
+}
+.filter-text {
+  font-size: 14px;
+  font-family: "Nunito Sans";
+  font-weight: 300;
+}
+.filter-icon {
+  color: var(--text);
+  font-size: 14px;
+  font-family: "Nunito Sans";
+  font-weight: 300;
+}
