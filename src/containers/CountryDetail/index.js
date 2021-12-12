@@ -22,7 +22,7 @@ export function CountryDetail() {
             <Button
               text={"Back"}
               onClick={handleGoBack}
-              iconLeft={<FaArrowLeft className="button-icon-country-detail" />}
+              icon={<FaArrowLeft className="button-icon-country-detail" />}
             />
           </div>
           <div className="country-content-wrapper">

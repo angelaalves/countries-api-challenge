@@ -2,7 +2,7 @@
   border-color: none;
   color: var(--text);
   background-color: var(--elements);
-  height: 30px;
+  min-height: 30px;
   border-radius: 5px;
   box-shadow: 0 0 5px #181818;
   min-width: 100px;
@@ -10,6 +10,8 @@
   display: table-cell;
   vertical-align: middle;
   margin: 5px;
+  overflow: hidden;
+  cursor: pointer;
 }
 .button:hover {
   box-shadow: 0 0 10px #c54f4f;
@@ -18,7 +20,9 @@
   font-family: "Nunito Sans";
   font-size: 14px;
 }
-
+.button-text-icon {
+  margin-bottom: 10px;
+}
 @media only screen and (max-width: 750px) {
   .button {
     margin: 20px;

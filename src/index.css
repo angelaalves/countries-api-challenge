@@ -1,10 +1,9 @@
 body {
   margin: 0;
+  background-color: var(--background);
   font-family: -apple-system, BlinkMacSystemFont, "Nunito Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.wrapper {
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

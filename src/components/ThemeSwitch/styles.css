@@ -7,6 +7,7 @@
   transition: all 0.5s;
   margin-right: 50px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .icon {
   margin-right: 10px;
