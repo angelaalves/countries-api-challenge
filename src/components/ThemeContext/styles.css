@@ -1,8 +1,7 @@
 .app {
   color: var(--text);
   background-color: var(--background);
-  width: 100vw;
-  min-height: 100vh;
+ padding-bottom: 40vh;
 }
 .content {
   width: 95vw;
