@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   uriGetAllCountries,
@@ -35,13 +35,12 @@ export function Dashboard() {
     }
   };
   const handleFilter = (region) => {
-    //Does this verification so you can get all the results again
     axios.get(uriGetCountriesByRegion(region)).then((res) => {
       handleCountries(res.data);
     });
   };
 
-  //I choose to deconstruct the array elements because we don't need all the information. And this way is more efficient
+  //I choose to deconstruct the array elements because we don't need all the information.
   const handleCountries = (countries) => {
     let newCountriesArray = [];
     countries.map((country) =>

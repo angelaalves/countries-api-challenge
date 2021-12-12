@@ -7,6 +7,7 @@ export function Search({ handleSearch }) {
   //Needs to run everytime the country name changes so it doenst get stuck with the initial value
   useEffect(() => {
     const listener = (event) => {
+      //Assumed that to search you had to press enter
       if (event.code === "Enter" || event.code === "NumpadEnter") {
         event.preventDefault();
         handleSearch(countryName);
