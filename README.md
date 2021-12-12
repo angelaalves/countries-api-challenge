@@ -18,6 +18,6 @@ Clone the project from 'https://github.com/angelaalves/where-in-the-world'
 run npm install
 
 npm start 
-(The default por is localhost:3000)
+(The default port is localhost:3000)
 
 and it should be it :)
