@@ -13,7 +13,7 @@ This project had a lot of first times for me :)
 I usually code in react native, so react.js was also a bit new to me.
 
 How to install the app:
-Clone the project from 'https://github.com/angelaalves/where-in-the-world'
+Clone the project from 'https://github.com/angelaalves/countries-api-challenge'
 
 run npm install
 
