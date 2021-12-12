@@ -1,46 +1,18 @@
-.country-detail {
-  flex-direction: column;
-  display: flex;
-  margin-top: 14px;
-  margin-right: 50px;
-}
-
-.country-name-detail {
-  font-family: "Nunito Sans";
-  font-size: 25px;
-  font-weight: 800;
-}
-.detail-wrapper {
-  margin-top: 25px;
-  margin-left: 50px;
-}
-
-.label-country-detail {
-  font-family: "Nunito Sans";
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 5px;
-}
-.detail-country-detail {
-  font-family: "Nunito Sans";
-  font-size: 14px;
-  font-weight: 300;
-  margin-left: 5px;
-}
-
-.country-detail-page-wrapper {
-  flex-direction: row;
-  display: flex;
-  justify-content: "space-between";
-  align-items: "center";
-}
-.country-page-wrapper {
+.country-detail-wrapper {
+  margin-top: 50px;
   width: 90vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-left: 5vw;
   justify-content: "space-between";
   align-items: "center";
+}
+.country-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.back-button-wrapper {
+  width: 120px;
+  margin-bottom: 50px;
 }
 
 .flag-country-detail {
@@ -49,20 +21,9 @@
 
 .button-icon-country-detail {
   font-size: 14px;
-  padding-left: 20px;
-  padding-top: 5px;
+  padding-right: 10px;
 }
-.borders {
-  display: flex;
-  flex-direction: row;
-  margin-top: 50px;
-}
-.borders-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: "space-between";
-  align-items: "center";
-}
+
 .border-container {
   background-color: var(--elements);
   margin: 5px;
@@ -83,41 +44,18 @@
   .flag-country-detail {
     min-width: 200px;
   }
-  .detail-wrapper {
-    margin-top: 25px;
-    margin-left: 0px;
-  }
-  .country-page-wrapper {
+  .country-detail-wrapper {
+    margin-top: 50px;
     width: 80vw;
+  }
+  .country-content-wrapper {
     display: flex;
     flex-direction: column;
-    margin-left: 5vw;
-    align-items: "center";
   }
   .button-country-detail {
     width: 100px;
     margin: 20px;
     margin-bottom: 50px;
     border-radius: 5px;
-  }
-  .country-detail-page-wrapper {
-    flex-direction: column;
-  }
-  .country-detail {
-    flex-direction: column;
-    display: flex;
-    margin-top: 14px;
-    margin-right: 50px;
-  }
-  .borders {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-  }
-  .borders-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    justify-content: "space-between";
-    align-items: "center";
   }
 }
